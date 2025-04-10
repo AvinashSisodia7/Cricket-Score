@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const bowlersTable = document.getElementById('bowlers-table').getElementsByTagName('tbody')[0];
     const commentaryLog = document.getElementById('commentary-log');
 
-    // Match state
+
     let matchState = {
         team1: '',
         team2: '',
