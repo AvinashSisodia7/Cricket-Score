@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Score Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-cricket"></i> Cricket Score Tracker</h1>
+        
+        <div class="match-info">
+            <div class="team-input">
+                <label for="team1">Team 1:</label>
+                <input type="text" id="team1" placeholder="Enter team name">
+                <label for="team2">Team 2:</label>
+                <input type="text" id="team2" placeholder="Enter team name">
+                <label for="overs">Total Overs:</label>
+                <input type="number" id="overs" min="1" max="50" value="20">
+                <button id="start-match">Start Match</button>
+            </div>
+        </div>
+        
+        <div class="scoreboard" id="scoreboard" style="display: none;">
+            <div class="header">
+                <h2 id="batting-team">Team 1</h2>
+                <div class="score-display">
+                    <span id="runs">0</span>/<span id="wickets">0</span>
+                    <span class="overs">(<span id="overs-display">0.0</span>)</span>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <div class="run-buttons">
+                    <button class="run-btn" data-runs="0">Dot</button>
+                    <button class="run-btn" data-runs="1">1</button>
+                    <button class="run-btn" data-runs="2">2</button>
+                    <button class="run-btn" data-runs="3">3</button>
+                    <button class="run-btn" data-runs="4">4</button>
+                    <button class="run-btn" data-runs="6">6</button>
+                </div>
+                
+                <div class="extras-buttons">
+                    <button class="extra-btn" data-extra="wide">Wide</button>
+                    <button class="extra-btn" data-extra="noball">No Ball</button>
+                    <button class="extra-btn" data-extra="bye">Bye</button>
+                    <button class="extra-btn" data-extra="legbye">Leg Bye</button>
+                </div>
+                
+                <div class="wicket-buttons">
+                    <button id="wicket-btn">Wicket <i class="fas fa-times"></i></button>
+                    <select id="wicket-type">
+                        <option value="bowled">Bowled</option>
+                        <option value="caught">Caught</option>
+                        <option value="lbw">LBW</option>
+                        <option value="runout">Run Out</option>
+                        <option value="stumped">Stumped</option>
+                        <option value="hitwicket">Hit Wicket</option>
+                    </select>
+                </div>
+                
+                <div class="match-controls">
+                    <button id="undo-btn">Undo <i class="fas fa-undo"></i></button>
+                    <button id="end-innings">End Innings</button>
+                    <button id="new-match">New Match</button>
+                </div>
+            </div>
+            
+            <div class="scorecard">
+                <div class="batsmen">
+                    <h3>Batting</h3>
+                    <table id="batsmen-table">
+                        <thead>
+                            <tr>
+                                <th>Batsman</th>
+                                <th>R</th>
+                                <th>B</th>
+                                <th>4s</th>
+                                <th>6s</th>
+                                <th>SR</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Batsmen data will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="bowlers">
+                    <h3>Bowling</h3>
+                    <table id="bowlers-table">
+                        <thead>
+                            <tr>
+                                <th>Bowler</th>
+                                <th>O</th>
+                                <th>M</th>
+                                <th>R</th>
+                                <th>W</th>
+                                <th>ER</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Bowlers data will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="commentary">
+                <h3>Commentary</h3>
+                <div id="commentary-log">
+                    <!-- Commentary will be added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
